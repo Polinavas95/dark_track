@@ -1,15 +1,19 @@
 from django.contrib import admin
-from .models import TractorTrack
+from .models import Track, ProcessingArea, Route, Tractor, Aggregator
 
-
-class TractorTrackInline(admin.TabularInline):
-    model = TractorTrack
-
-
+@admin.register(Track)
 class TractorTrackAdmin(admin.ModelAdmin):
-    inlines = [
-        TractorTrackInline,
-    ]
+    pass
+
+@admin.register(ProcessingArea, Route)
+class ShapeAdmin(admin.ModelAdmin):
+    pass
 
 
-admin.site.register(TractorTrack, TractorTrackAdmin)
+@admin.register(Tractor)
+class TractorAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Aggregator)
+class AggregatorAdmin(admin.ModelAdmin):
+    pass

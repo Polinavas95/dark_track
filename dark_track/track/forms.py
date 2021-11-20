@@ -1,13 +1,13 @@
 from django import forms
 from django.forms import ClearableFileInput
 
-from .models import TractorTrack
+from .models import Track
 
 
 class TractorTrackForm(forms.ModelForm):
     class Meta:
-        model = TractorTrack
-        fields = ['file', ]
+        model = Track
+        fields = ['processing_area', ]
         widgets = {
-            'file': ClearableFileInput(attrs={'multiple': True}),
+            'processing_area': ClearableFileInput(attrs={'multiple': True}),
         }

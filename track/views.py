@@ -6,15 +6,13 @@ from .forms import TractorTrackForm
 
 class TractorTrackView(FormView):
     form_class = TractorTrackForm
-    template_name = 'upload.html'  # Replace with your template.
-    success_url = 'index.html'  # Replace with your URL or reverse().
+    template_name = 'index.html'
+#    success_url = 'index.html'
 
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         files = request.FILES.getlist('file_field')
         if form.is_valid():
-            for file in files:
-                ...  # Do something with each file.
             return self.form_valid(form)
         return self.form_invalid(form)

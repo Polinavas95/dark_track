@@ -19,4 +19,4 @@ class TractorAdmin(admin.ModelAdmin):
 
 @admin.register(Aggregator)
 class AggregatorAdmin(admin.ModelAdmin):
-    pass
+    list_filter = ('target', )
